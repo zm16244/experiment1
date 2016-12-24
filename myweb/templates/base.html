@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Bullet中文wiki，本站的宗旨就是分享物理实时模拟的经验和知识"/>
+<meta name="keywords" content="Bullet,物理引擎,碰撞检测,刚体模拟,软体模拟,Bullet中文教程"/>
+
+<title>{% block title %}{{ application_name }}{% endblock %}</title>
+<link href="/static/css/base.css" rel="stylesheet" type="text/css" />
+<link rel="shortcuticon" href="/static/faviconnew.ico" type="image/x-icon"/>
+<script type="text/JavaScript">
+<!--
+
+function NewPage() {
+  var pageName = window.prompt("输入你想编辑的wiki页名:");
+  if (pageName.length > 50)
+  {
+		alert("输入的长度不超过50个字");
+		return
+  }
+  if (pageName) {
+    location.href = pageName + "?mode=edit";
+  }
+}
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_validateForm() { //v4.0
+  var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+  for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=MM_findObj(args[i]);
+    if (val) { nm=val.name; if ((val=val.value)!="") {
+      if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+        if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+      } else if (test!='R') { num = parseFloat(val);
+        if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+        if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+          min=test.substring(8,p); max=test.substring(p+1);
+          if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+    } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+  } if (errors) alert('有错误发生:\n'+errors);
+  document.MM_returnValue = (errors == '');
+}
+//-->
+</script>
+{% block head %}{% endblock %}
+</head>
+
+
+<body>
+<div id="main">
+  <div id="top">
+    <div id="logopic"><img src="/static/images/logo.JPG" alt="logo" name="logo" width="1000" height="120" id="logo" /></div>
+  </div>
+  <div id="loginbar">
+  {{lb}}<a href="/login">登陆/创建账户</a>{{le}}
+  {{wb}}欢迎您!&nbsp;&nbsp;.&nbsp;&nbsp;<a href="/"><span id ="nickname">{{username}}</span></a>&nbsp;&nbsp;.&nbsp;&nbsp;<a href="/exit">退出登陆</a>{{we}}
+  </div>
+  <div id="mid">
+    <div id="box1">
+	  <div id="ban1">
+	   	  <ul>
+	      <li><a href="/MainPage">首页</a></li>
+		  
+	      <li><a href="/community">社区</a></li>
+		  
+	      <li><a href="/download">下载</a></li>
+		  
+	      <li><a href="/help">帮助</a></li>
+        </ul>
+	  </div>
+	  <div id="ban2">
+	    <form action="/search" method="get" name="form1" id="form1" >
+		 <input name="textfield" type="text" size="10" />     
+	     <input type="submit" name="Submit" value="搜索" />
+	    </form>
+			     
+	      </div>
+	</div>
+	<div id="box2">
+	  <div id="info">
+	    <div id="infoleft" align="left">
+	    {{ ebuttonb }}<input type="button" value="New Page" onclick="NewPage()" style="margin-right: 5px;" />{% block buttons %}{% endblock %}{{ ebuttone }}
+		</div>
+		<div id="inforight" align="right">   
+	      {% if page.entity %}
+            Edited on {{ page.entity.modified|date:"D, M j, Y \a\t P" }} by
+            {% if page.user %}
+              {{ page.user }}
+            {% else %}
+              匿名用户
+            {% endif %}
+          {% endif %}
+		</div>
+	  </div>
+	  <div id="text">{% block text %}{{ msg }}{% endblock %}
+	  </div>
+	</div>
+  </div>
+  <div id="foot">@2009   -   <a href="/privacy">隐私政策</a>   -   <a href="/aboutwebsite">关于本站</a>   -   <a href="/reliefdeclare">免责声明</a>   -   <a href="/contactme">联系站长</a></div>
+</div>
+</body>
+</html>

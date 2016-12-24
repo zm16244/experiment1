@@ -1,0 +1,106 @@
+﻿{% extends "base.html" %}
+{% block text %}
+	    <form id="form3" name="form3" method="post" action="/register">
+	      <table width="395" >
+            <tr>
+              <th width="2" background="../static/images/gblnav_left.gif" scope="col">&nbsp;</th>
+              <th colspan="3" background="../static/images/glbnav_background.gif" scope="col">&nbsp;</th>
+              <th width="2" background="../static/images/glbnav_right.gif" scope="col">&nbsp;</th>
+            </tr>
+            <tr>
+              <td colspan="5"><div align="center">注册</div></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td width="126"><div align="right">账户ID</div></td>
+              <td width="146">
+                <div align="left">
+                  <input name="id" type="text" id="id" size="18" />
+                  </div>
+              </td>
+              <td width="120">6位以上数字加英文</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><div align="right">密码</div></td>
+              <td>
+                <div align="left">
+                  <input name="psw" type="password" id="psw" size="20" />
+                  </div>
+              </td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><div align="right">确认密码</div></td>
+              <td>
+                <div align="left">
+                  <input name="pswa" type="password" id="pswa" size="20" />
+                  </div>
+              </td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><div align="right">性别</div></td>
+              <td><div align="left">男
+                <input name="sex" type="radio" value="man" checked="checked" />
+                女
+                <input type="radio" name="sex" value="woman" />
+				</div>               </td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><div align="right">邮箱</div></td>
+              <td>
+                <div align="left">
+                  <input name="email" type="text" id="email" size="18" />
+                  </div>
+              </td>
+              <td> <div align="left">必填</div></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><div align="right">msn</div></td>
+              <td>
+                <div align="left">
+                  <input name="msn" type="text" id="msn" size="18" />
+                  </div>
+              </td>
+              <td> <div align="left">选填</div></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td><div align="right">qq</div></td>
+              <td>
+                <div align="left">
+                  <input name="qq" type="text" id="qq" size="18" />
+                  </div>
+              </td>
+              <td> <div align="left">选填</div></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="5"><div align="center">
+                <input name="zhuce" type="submit" id="zhuce" onclick="MM_validateForm('id','','R','email','','RisEmail','qq','','NisNum','psw','','R','pswa','','R');return document.MM_returnValue" value="  注册  " />
+                <input name="reset" type="reset" id="reset" value="  重置  " />      </div></td>
+            </tr>
+            <tr>
+              <td colspan="5">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="5"><div align="left"><span class="STYLE1">注册以后可以新建和编辑自己的wiki页，有什么疑问请<a href="/contactme">联系我</a></span></div></td>
+            </tr>
+            <tr>
+              <td colspan="5">&nbsp;</td>
+            </tr>
+          </table>
+        </form>
+{% endblock %}

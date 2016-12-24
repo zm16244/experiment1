@@ -1,0 +1,11 @@
+MainPage
+community
+download
+help
+privacy
+aboutwebsite  
+reliefdeclare
+contactme
+fresh(自动页面 查询最近添加的页面)
+login（自动页面 登陆）
+register（自动页面 注册）
